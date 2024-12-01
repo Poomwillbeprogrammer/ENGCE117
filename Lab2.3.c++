@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 void explode(char str1[], char splitter, char str2[][100], int *count);
 
