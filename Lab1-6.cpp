@@ -94,3 +94,13 @@ int *GetMatrix(int *row, int *col, int *sum)
 
     return data;
 }
+
+/*
+example
+int x = 10;
+int *ptr = &x;
+
+printf("&ptr: %p\n", (void*)&ptr);  // ที่อยู่ของ pointer
+printf("ptr: %p\n", (void*)ptr);     // ที่อยู่ที่ pointer ชี้
+printf("*ptr: %d\n", *ptr);          // ค่าที่ pointer ชี้ถึง
+*/
