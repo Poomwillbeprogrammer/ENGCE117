@@ -6,30 +6,30 @@ void explode(char str1[], const char splitters[], char str2[][100], int *count);
 
 int main()
 {
-    char out[20][100];
-    char in[50];
+    char out[20][100] ;
+    char in[50] ;
     int count;
-    printf("Enter a text: ");
+    printf("Enter a text: ") ;
     fgets(in, 50, stdin);
-    explode(in, " /-,:!*", out, &count);
-    printf("count = %d\n", count);
+    explode(in, " /-,:!*", out, &count) ;
+    printf("count = %d\n", count) ;
     for (int i = 0; i < count; i++)
     {
-        printf("str2[%d] = %s\n", i, out[i]);
-    }
-    printf("count = %d", count);
+        printf("str2[%d] = %s\n", i, out[i]) ;
+    }//end for
+    printf("count = %d", count) ;
     return 0;
-}
+}//end main
 
 void explode(char str1[], const char splitters[], char str2[][100], int *count)
 {
-    int i = 0, j = 0, k = 0;
-    *count = 0;
+    int i = 0, j = 0, k = 0 ;
+    *count = 0 ;
 
     if (str1 == NULL || str1[0] == '\0')
     {
         return;
-    }
+    }//end if
 
     while (str1[i] != '\0')
     {
@@ -40,8 +40,8 @@ void explode(char str1[], const char splitters[], char str2[][100], int *count)
             {
                 isSplitter = 1;
                 break;
-            }
-        }
+            }//end if
+        }//end for
 
         if (isSplitter)
         {
@@ -50,10 +50,10 @@ void explode(char str1[], const char splitters[], char str2[][100], int *count)
                 str2[k][j] = '\0';
                 k++;
                 j = 0;
-            }
+            }//end if
             i++;
             continue;
-        }
+        }//end if
 
         str2[k][j] = str1[i];
         j++;
@@ -63,11 +63,11 @@ void explode(char str1[], const char splitters[], char str2[][100], int *count)
         {
             if (j > 0)
             {
-                str2[k][j] = '\0';
+                str2[k][j] = '\0' ;
                 k++;
-            }
-        }
-    }
-    k -= 1;
-    *count = k;
-}
+            }//end if
+        }//end if
+    }//end while
+    k -= 1 ;
+    *count = k ;
+}//end function

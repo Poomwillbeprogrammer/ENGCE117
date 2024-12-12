@@ -117,4 +117,4 @@ void explode(char str1[], char splitter, char str2[][100], int *count)
     }
 
     *count = k;
-}
+}//end function
