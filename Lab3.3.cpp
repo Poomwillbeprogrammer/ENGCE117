@@ -6,9 +6,9 @@ struct student
     int age;
     char sex;
     float gpa;
-};
+}typedef S;//end struct
 
-struct student upgrade(struct student child);
+S upgrade(S child);
 
 int main()
 {
@@ -22,10 +22,10 @@ int main()
 
 struct student upgrade(struct student child) {
     if (child.sex == 'M') {
-        child.gpa *= 1.10;
+        child.gpa *= 1.10 ;
     }
-    else if (child.sex == 'F') {
-        child.gpa *= 1.20;
+    else if ( child.sex == 'F' ) {
+        child.gpa *= 1.20 ;
     }
-    return child;
-}
+    return child ;
+}//end function
