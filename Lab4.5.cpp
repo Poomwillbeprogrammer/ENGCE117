@@ -11,36 +11,27 @@ struct studentNode
 };
 
 void saveNode(struct studentNode *child, const char n[], int a, char s, float g);
-void GoNext1(struct studentNode **walk);
+void GoNext2(struct studentNode **walk);
 
 int main()
 {
     struct studentNode *start, *now1, **now2;
     start = new struct studentNode;
-    saveNode(start, "one", 6, 'M', 3.11f);
+    saveNode(start, "one", 6, 'M', 3.11f); 
     start->next = new struct studentNode;
-    saveNode(start->next, "two", 8, 'F', 3.22f);
+    saveNode(start->next, "two", 8, 'F', 3.22f); 
     start->next->next = new struct studentNode;
-    saveNode(start->next->next, "three", 10, 'M', 3.33f);
+    saveNode(start->next->next, "three", 10, 'M', 3.33f); 
     start->next->next->next = new struct studentNode;
-    saveNode(start->next->next->next, "four", 12, 'F', 3.44f);
-
+    saveNode(start->next->next->next, "four", 12, 'F', 3.44f); 
+    
     start->next->next->next->next = NULL;
 
     now1 = start;
     now2 = &start;
 
-    GoNext1(&now1);
-    if (now1 != NULL) {
-        printf("Name: %s\n", now1->name);
-        printf("Age: %d\n", now1->age);
-        printf("sex: %c\n", now1->sex);
-        printf("GPA: %.2f\n", now1->gpa);
-    }
-    else {
-        printf("No next node\n");
-    }    
-    
+    GoNext2(now2);
+    printf("%s ", (*now2)->name);
 
     return 0;
 } // end function
@@ -51,16 +42,17 @@ void saveNode(struct studentNode *child, const char n[], int a, char s, float g)
     child->age = a;
     child->sex = s;
     child->gpa = g;
+    child->next = NULL;
 } // end function
 
-void GoNext1(struct studentNode **walk)
+void GoNext2(struct studentNode **walk)
 {
     if ((*walk)->next != NULL)
     {
-        *walk = (*walk)->next; //point to next node
+        *walk = (*walk)->next; // point to next node
     }
     else
     {
-        *walk = NULL; //point to NULL
+        *walk = NULL; // point to NULL
     }
 } // end function

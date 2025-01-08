@@ -10,21 +10,20 @@ struct studentNode
     struct studentNode *next;
 };
 
-void saveNode(struct studentNode *child, const char n[], int a, char s, float g);
+void SaveNode(struct studentNode *child, const char n[], int a, char s, float g);
 void GoNext1(struct studentNode **walk);
 
 int main()
 {
     struct studentNode *start, *now1, **now2;
     start = new struct studentNode;
-    SaveNode(start, "one", 6, 'M', 3.11);
+    SaveNode(start, "one", 6, 'M', 3.11f);
     start->next = new struct studentNode;
-    SaveNode(start->next, "two", 8, 'F', 3.22);
+    SaveNode(start->next, "two", 8, 'F', 3.22f);
     start->next->next = new struct studentNode;
-    SaveNode(start->next->next, "three", 10, 'M', 3.33);
-
+    SaveNode(start->next->next, "three", 10, 'M', 3.33f);
     start->next->next->next = new struct studentNode;
-    SaveNode(start->next->next->next, "four", 12, 'F', 3.44);
+    SaveNode(start->next->next->next, "four", 12, 'F', 3.44f);
 
     now1 = start;
     now2 = &start;
@@ -51,6 +50,7 @@ void SaveNode(struct studentNode *child, const char n[], int a, char s, float g)
     child->age = a;
     child->sex = s;
     child->gpa = g;
+    child->next = NULL;
 } // end function
 
 void GoNext1(struct studentNode **walk)
