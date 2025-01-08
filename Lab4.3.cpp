@@ -10,7 +10,7 @@ struct studentNode
     struct studentNode *next;
 };
 
-void saveNode(struct studentNode *child, char n[], int a, char s, float g);
+void saveNode(struct studentNode *child, const char n[], int a, char s, float g);
 void GoNext1(struct studentNode **walk);
 
 int main()
@@ -32,8 +32,12 @@ int main()
     now2 = &start;
 
     GoNext1(&now1);
-    if (now1 != NULL)
+    if (now1 != NULL) {
         printf("Name: %s\n", now1->name);
+        printf("Age: %d\n", now1->age);
+        printf("sex: %c\n", now1->sex);
+        printf("GPA: %.2f\n", now1->gpa);
+    }
     else {
         printf("No next node\n");
     }    
@@ -42,7 +46,7 @@ int main()
     return 0;
 } // end function
 
-void saveNode(struct studentNode *child, char n[], int a, char s, float g)
+void saveNode(struct studentNode *child, const char n[], int a, char s, float g)
 {
     strcpy(child->name, n);
     child->age = a;
