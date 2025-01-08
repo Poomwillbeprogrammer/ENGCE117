@@ -8,7 +8,7 @@ struct student
     float gpa;
 }; 
 
-void upgrade(struct student *child);
+void upgrade(struct student child);
 
 int main()
 {
@@ -20,6 +20,6 @@ int main()
     return 0;
 } // end function
 
-void upgrade(struct student *child) {
+void upgrade(struct student child) {
     child->gpa*=1.10 ;
 }
